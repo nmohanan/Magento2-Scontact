@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*!
+ * http://suyati.com/
+ * Suyati_Scontact 2.0.0
+ * Copyright (C) 2016, Suyati Technologies
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+   You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+*/
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="admin.block.scontact.contacts.grid.container">
+            <block class="Magento\Backend\Block\Widget\Grid" name="admin.block.scontact.contacts.grid" as="grid">
+
+                <arguments>
+                    <argument name="id" xsi:type="string">contactsGrid</argument>
+                    <argument name="dataSource" xsi:type="object">Suyati\Scontact\Model\Resource\Contacts\Collection</argument>
+                    <argument name="default_sort" xsi:type="string">contacts_id</argument>
+                    <argument name="default_dir" xsi:type="string">desc</argument>
+                    <argument name="save_parameters_in_session" xsi:type="boolean">true</argument>
+                    <argument name="use_ajax" xsi:type="boolean">true</argument>
+                </arguments>
+                <block class="Magento\Backend\Block\Widget\Grid\Export" name="admin.block.scontact.contacts.grid.export" as="grid.export">
+                    <arguments>
+                        <argument name="exportTypes" xsi:type="array">
+                            <item name="csv" xsi:type="array">
+                                <item name="urlPath" xsi:type="string">*/*/exportCsv</item>
+                                <item name="label" xsi:type="string" translate="true">CSV</item>
+                            </item>
+                            <item name="excel" xsi:type="array">
+                                <item name="urlPath" xsi:type="string">*/*/exportXml</item>
+                                <item name="label" xsi:type="string" translate="true">Excel XML</item>
+                            </item>
+                        </argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" name="admin.block.scontact.contacts.grid.columnSet" as="grid.columnSet">
+
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="contacts_id">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">ID</argument>
+                            <argument name="type" xsi:type="string">number</argument>
+                            <argument name="id" xsi:type="string">contacts_id</argument>
+                            <argument name="index" xsi:type="string">contacts_id</argument>
+                        </arguments>
+                    </block>
+                   <block class="Magento\Backend\Block\Widget\Grid\Column" as="name">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Name</argument>
+                            <argument name="type" xsi:type="string">string</argument>
+                            <argument name="id" xsi:type="string">name</argument>
+                            <argument name="index" xsi:type="string">name</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="email">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Email</argument>
+                            <argument name="type" xsi:type="string">string</argument>
+                            <argument name="id" xsi:type="string">email</argument>
+                            <argument name="index" xsi:type="string">email</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="mobile">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Mobile</argument>
+                            <argument name="type" xsi:type="string">string</argument>
+                            <argument name="id" xsi:type="string">mobile</argument>
+                            <argument name="index" xsi:type="string">mobile</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="location">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Location</argument>
+                            <argument name="type" xsi:type="string">string</argument>
+                            <argument name="id" xsi:type="string">location</argument>
+                            <argument name="index" xsi:type="string">location</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="pincode">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Pincode</argument>
+                            <argument name="type" xsi:type="string">string</argument>
+                            <argument name="id" xsi:type="string">pincode</argument>
+                            <argument name="index" xsi:type="string">pincode</argument>
+                        </arguments>
+                    </block>
+                     <block class="Magento\Backend\Block\Widget\Grid\Column" as="comment">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Comment</argument>
+                            <argument name="type" xsi:type="string">string</argument>
+                            <argument name="id" xsi:type="string">comment</argument>
+                            <argument name="index" xsi:type="string">comment</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="created_date">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Created Date</argument>
+                            <argument name="type" xsi:type="string">string</argument>
+                            <argument name="id" xsi:type="string">created_date</argument>
+                            <argument name="index" xsi:type="string">created_date</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

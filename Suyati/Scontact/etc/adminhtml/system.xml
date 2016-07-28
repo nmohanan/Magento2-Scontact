@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/*!
+ * http://suyati.com/
+ * Suyati_Scontact 2.0.0
+ * Copyright (C) 2016, Suyati Technologies
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+   You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="suyati" translate="label" sortOrder="210">
+            <label>Suyati Scontact</label>
+        </tab>
+        <section id="suyati_scontact" translate="label" type="text" sortOrder="120" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Contacts</label>
+            <tab>suyati</tab>
+            <resource>Suyati_Scontact::scontact</resource>
+            <group id="email_template" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Suyati Contact Options</label>
+                <field id="pincode" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Is Pincode Required?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>                    
+                </field>
+                <field id="location" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Is Location Required?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>                    
+                </field>
+                <field id="mobile" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Is Mobile Number Required?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>                    
+                </field>
+                <field id="comment" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Is Comment Required?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>                    
+                </field>
+                
+            </group>
+        </section>
+    </system>
+</config>

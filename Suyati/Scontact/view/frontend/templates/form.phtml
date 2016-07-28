@@ -1,0 +1,78 @@
+<?php
+/*!
+ * http://suyati.com/
+ * Suyati_Scontact 2.0.0
+ * Copyright (C) 2016, Suyati Technologies
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+   You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+*/
+
+
+// @codingStandardsIgnoreFile
+
+$pinocde_required = $this->helper('Suyati\Scontact\Helper\Data')->getConfig('suyati_scontact/email_template/pincode');
+$location_required = $this->helper('Suyati\Scontact\Helper\Data')->getConfig('suyati_scontact/email_template/location');
+$mobile_required = $this->helper('Suyati\Scontact\Helper\Data')->getConfig('suyati_scontact/email_template/mobile');
+$comments_required = $this->helper('Suyati\Scontact\Helper\Data')->getConfig('suyati_scontact/email_template/comment');
+
+?>
+
+
+<form class="form contact"
+      action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Write Us') ?></span></legend><br />
+        <div class="field note no-label"><?php /* @escapeNotVerified */ echo __('Please give your valuable comments.') ?></div>
+        <div class="field name required">
+            <label class="label" for="name"><span><?php /* @escapeNotVerified */ echo __('Name') ?></span></label>
+            <div class="control">
+                <input name="name" id="name" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Suyati\Scontact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span><?php /* @escapeNotVerified */ echo __('Email') ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Suyati\Scontact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+        <div class="<?php if($mobile_required==1){ echo "field mobile required";}else { echo "field mobile"; }?>">
+            <label class="label" for="mobile"><span><?php /* @escapeNotVerified */ echo __('Mobile Number') ?></span></label>
+            <div class="control">
+                <input name="mobile" id="mobile" title="<?php /* @escapeNotVerified */ echo __('Mobile Number') ?>" value="" class="input-text" type="text" data-validate="<?php if($mobile_required==1){ echo "{required:true}";}else { echo "{required:false}"; }?>" />
+            </div>
+        </div>
+        <div class="<?php if($location_required==1){ echo "field location required";}else { echo "field location"; }?>">
+            <label class="label" for="location"><span><?php /* @escapeNotVerified */ echo __('Location') ?></span></label>
+            <div class="control">
+                <input name="location" id="location" title="<?php /* @escapeNotVerified */ echo __('Location') ?>" value="" class="input-text" type="text" data-validate="<?php if($location_required==1){ echo "{required:true}";}else { echo "{required:false}"; }?>" />
+            </div>
+        </div>
+        <div class="<?php if($pinocde_required==1){ echo "field pincode required";}else { echo "field pincode"; }?>">
+            <label class="label" for="pincode"><span><?php /* @escapeNotVerified */ echo __('Pincode') ?></span></label>
+            <div class="control">
+                <input name="pincode" id="pincode" title="<?php /* @escapeNotVerified */ echo __('pincode') ?>" value="" class="input-text" type="text" data-validate="<?php if($pinocde_required==1){ echo "{required:true}";}else { echo "{required:false}"; }?>" />
+            </div>
+        </div>
+        <div class="<?php if($comments_required==1){ echo "field comment required";}else { echo "field comment"; }?>">
+            <label class="label" for="comment"><span><?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?></span></label>
+            <div class="control">
+                <textarea name="comment" id="comment" title="<?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?>" class="input-text" cols="5" rows="3" maxlength="150" data-validate="<?php if($comments_required==1){ echo "{required:true}";}else { echo "{required:false}"; }?>"></textarea>
+            </div>
+        </div>
+        <?php echo $block->getChildHtml('form.additional.info'); ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>" class="action submit primary">
+                <span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/*!
+ * http://suyati.com/
+ * Suyati_Scontact 2.0.0
+ * Copyright (C) 2016, Suyati Technologies
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+   You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <scontact>
+            <scontact>
+                <enabled>1</enabled>
+            </scontact>
+            <email>
+                <recipient_email>
+                    <![CDATA[hello@example.com]]>
+                </recipient_email>
+                <sender_email_identity>custom2</sender_email_identity>
+                <email_template>scontact_email_email_template</email_template>
+            </email>
+        </scontact>
+    </default>
+</config>
