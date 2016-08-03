@@ -14,13 +14,13 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Magento_Contact::contacts">
+                <!-- <resource id="Magento_Contact::contacts">
                     <resource id="Suyati_Scontact::contact_manage" title="Manage Conatcts"/>
-                </resource>
+                </resource> -->
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="Suyati_Scontact::scontact" title="Contacts Section" />
+                            <resource id="Suyati_Scontact::contact_manage" title="Scontacts Section" />
                         </resource>
                     </resource>
                 </resource>
